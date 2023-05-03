@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2023-05-03T09:44:09.668Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="PHupY1IjtL2uKwu19gcL" version="21.2.6" type="github" pages="2">
+<mxfile host="app.diagrams.net" modified="2023-05-03T09:45:30.856Z" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/112.0.0.0 Safari/537.36" etag="eCZplU4N3U5Qxo7puIJw" version="21.2.6" type="github" pages="2">
   <diagram id="C5RBs43oDa-KdzZeNtuy" name="Page-1">
     <mxGraphModel dx="3267" dy="1918" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="827" pageHeight="1169" math="0" shadow="0">
       <root>
@@ -572,7 +572,7 @@
         <mxCell id="Mgi0bur8p7sXiOA3nzR_-55" value="nume_produs" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-290" y="-200" width="57" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Mgi0bur8p7sXiOA3nzR_-57" value="cantatitate_recoltata" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
+        <mxCell id="Mgi0bur8p7sXiOA3nzR_-57" value="cantatitate" style="text;html=1;strokeColor=none;fillColor=none;align=center;verticalAlign=middle;whiteSpace=wrap;rounded=0;fontSize=16;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
           <mxGeometry x="-300" y="-180" width="60" height="30" as="geometry" />
         </mxCell>
         <mxCell id="080SpqLosALXBFT3gfy6-0" value="verifica" style="rhombus;whiteSpace=wrap;html=1;fontSize=16;" parent="WIyWlLk6GJQsqaUBKTNV-1" vertex="1">
