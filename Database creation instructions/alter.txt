@@ -1,0 +1,29 @@
+alter table ANGAJAT
+    add constraint fk_cod_locatie FOREIGN KEY(cod_locatie)
+    		REFERENCES LOCATIE(cod_locatie);
+ 
+alter table MATCA
+add constraint fk_id_stup FOREIGN KEY(id_stup)
+    references FAMILIE_DE_ALBINE(id_stup);
+
+alter table PRODUCE
+add(constraint fk_prod_id_stup FOREIGN KEY(id_stup) references FAMILIE_DE_ALBINE(id_stup),
+    constraint fk_prod_cod_produs FOREIGN KEY(cod_produs) references PRODUS(cod_produs));
+
+alter table VERIFICA
+add(constraint fk_ver_id_stup FOREIGN KEY(id_stup) references FAMILIE_DE_ALBINE(id_stup),
+    constraint fk_ver_id_apicultor FOREIGN KEY(id_apicultor) references APICULTOR(id_apicultor),
+    constraint fk_ver_cod_locatie FOREIGN KEY(cod_locatie) references LOCATIE(cod_locatie));
+
+alter table ANGAJEAZA
+add (constraint pk_angajeaza PRIMARY KEY(id_apicultor,id_angajat),
+     constraint fk_ang_id_apicultor FOREIGN KEY(id_apicultor) references APICULTOR(id_apicultor),
+     constraint fk_ang_id_angajat FOREIGN KEY(id_angajat) references ANGAJAT(id_angajat));
+
+alter table VIZITEAZA
+add(constraint fk_viz_id_apicultor FOREIGN KEY(id_apicultor) references APICULTOR(id_apicultor),
+    constraint fk_viz_cod_locatie FOREIGN KEY (cod_locatie) references LOCATIE(cod_locatie));
+
+alter table CUMPARA
+add( constraint fk_cump_id_client FOREIGN KEY(id_client) references CLIENT(id_client),
+    constraint fk_cump_cod_produs FOREIGN KEY(cod_produs) references PRODUS(cod_produs));

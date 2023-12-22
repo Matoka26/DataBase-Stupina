@@ -1,0 +1,118 @@
+--12
+
+--1.să se afișeze numele si prenumele apicultorilor  care sunt înregistrați de înainte de 2011 si au angajat cel puțin 3 angajați
+
+	select concat(concat(nume_apicultor,' '),prenume_apicultor) numeApicultor, count(a.id_angajat) nrAngajati
+from (select id_apicultor  as id, nume_apicultor,prenume_apicultor from apicultor where extract(YEAR FROM data_inregistrare) <= 2010),
+	 angajeaza ang,angajat a
+where ang.id_apicultor = id and a.id_angajat = ang.id_angajat
+group by nume_apicultor,prenume_apicultor
+having count(id_apicultor) > 2;
+
+--2.culoarea(explicit)  fiecărei mătci care are id-ul conținând  A, iar stupul din care face parte are o medie de producție de miere >= 3
+
+with stupiBuni as(
+	select v.id_stup id_Stup,avg(v.productie_miere) miere
+    from verifica v
+    group by v.id_Stup
+    having avg(v.productie_miere) >= 3
+)
+select  s.id_stup,s.miere,m.id_matca,case m.culoare_marcaj
+    		when 'a' then 'alb'
+    		when 's' then 'albastru'
+    		when 'g' then 'galben'
+    		when 'v' then 'verde'
+    		when 'r' then 'rosu'
+    END as culoare
+from matca m inner join stupiBuni s
+on m.id_Stup = s.id_Stup
+where lower(m.id_matca) like '%a%' ;
+
+--3.să se afișeze numele , postul, anii de lucru la stupină și angajatorul angajaților cu salariul mai mare decât media
+
+select (select a.nume_angajat||' '||a.prenume_angajat  from angajat a
+    	where a.id_angajat = ang.id_angajat) as nume_Angajat, ang.post,ang.salariu,round(((select nvl(ang.data_eliminare,sysdate) from dual) - ang.data_angajare)/365) as Ani_lucrati ,(select ap.nume_apicultor||' '||ap.prenume_apicultor 
+  				from apicultor ap
+    				where ap.id_apicultor = ang.id_apicultor) as nume_Apicultor
+from angajeaza ang 
+where ang.salariu >= (select avg(salariu) from angajeaza);
+
+--4.să se afișeze codul apicultorilor și numărul de stupi verificați daca este mai mare decât 1 și stupii au numărul < 500
+
+select id_apicultor,count(id_verificare) as nr
+from verifica
+where id_stup in (select id_stup
+   		 from verifica 
+   		 group by id_Stup
+  		having avg(productie_miere) >= 3)
+   and id_stup in ( select id_stup from familie_de_albine where numar < 500)
+group by id_apicultor
+having count(id_verificare) >= 2 ;
+
+--5.se ia în considerare ca primii 10 stupi să fie revopsiți, stupii albaștri vor deveni verzi, cei roșii vor fi albaștrii, iar cei albi vor fi roșii,toți ceilalți vor fi vopsiți cu alb. Cum vor arăta ulterior?
+
+select id_stup,nvl(decode(culoare,'albastru','verde','rosu','albastru','alb','rosu'),'alb') culori_noi
+from familie_de_albine
+    where id_stup in(select id_stup from (select id_stup from familie_De_albine order by id_Stup) where rownum < 11) order by id_stup;
+
+
+
+--13
+
+--1.sa se mărească salariul tuturor angajaților de la pază cu 10% si lucrează intr-o pădure
+
+update angajeaza 
+set salariu = salariu * 1.1
+where  post = 'paznic' and data_eliminare is null
+    and id_angajat in (select id_angajat from angajat where cod_locatie in (select l.cod_locatie from locatie l where lower(l.nume_loc) like '%padure%'));
+
+--2.sa se șteargă din clienții care nu au cumpărat nimic
+
+delete from client
+where id_client not in (select unique id_client from cumpara);
+
+--3să se dea valoarea 1 in câmpul de 'multiplicator' tuturor clienților care au cumpărat material biologic
+
+update client set multiplicator = 1
+where  id_client in (select unique c.id_client
+    			  from client c,cumpara cum,produs p
+    			  where c.id_client = cum.id_client and p.cod_produs = cum.cod_produs and   p.categorie = 'biologic');
+
+
+--15
+
+--1.Să se afișeze top 3 produse vandute,codul și cantitatea
+	select * from(
+    	select p.nume_produs as nume,c.cod_produs as cod, sum(c.cantitate) as cantiate
+    	from cumpara c,produs p
+		where p.cod_produs = c.cod_produs
+        group by c.cod_produs,p.nume_produs
+        	order by sum(cantitate) desc)
+	where rownum < 4;
+
+--2.Să se găsească toți stupii care au fost verificați de toți apicultorii cu numele ‘Dogaru’
+
+select distinct id_stup
+from verifica
+	MINUS
+select id_stup from (select distinct id_Stup ,id_apicultor
+    			from (select distinct id_stup from verifica),
+    		    	          (select id_apicultor from apicultor 
+    					where lower(nume_apicultor) = 'dogaru')
+         	               MINUS
+    		(select id_stup,id_apicultor  from verifica)
+  	);
+
+
+--3. Câte produse a produs fiecare stup,ce culoare are matca sa(daca are),când a fost verificat ultima dată(daca a fost)
+
+select fam.id_Stup,
+       count(pro.id_recoltare) as Nr_prod_Recoltate,
+       decode(ma.culoare_marcaj,'a','alb','g','galben','r','rosu','v','verde','s','albastru','Nu are matca :(') as culoare_matca, 
+       nvl(to_char(max(vf.data_verificare)),'Neverificat') as ultima_data
+from familie_De_albine fam,produce pro,matca ma,verifica vf
+where fam.id_stup = pro.id_Stup(+)
+and   fam.id_Stup = ma.id_stup(+)
+and   fam.id_stup = vf.id_stup(+)
+    
+group by fam.id_Stup,decode(ma.culoare_marcaj,'a','alb','g','galben','r','rosu','v','verde','s','albastru','Nu are matca :('); 

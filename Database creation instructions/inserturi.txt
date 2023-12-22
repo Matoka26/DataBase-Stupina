@@ -1,0 +1,269 @@
+--INSERT-uri
+
+insert into APICULTOR values (141042, 'Dogaru','Mihai',to_date('24.10.2009','dd.mm.yyyy'));
+insert into APICULTOR values (104921 , 'Dogaru','Sorin',to_date('12.04.2003','dd.mm.yyyy'));
+insert into APICULTOR values (947821 , 'Mircea','Razvan',to_date('05.02.2013','dd.mm.yyyy'));
+insert into APICULTOR values (190391 , 'Alexandru','Andrei',to_date('10.03.2023','dd.mm.yyyy'));
+insert into APICULTOR values (194821, 'Papusoi','Rares',to_date('01.02.2010','dd.mm.yyyy'));
+--select * from APICULTOR; 
+
+
+insert into CLIENT values(cl_index.nextval,'Popescu','Andrei','0728109930',0);
+insert into CLIENT values(cl_index.nextval,'Ionescu','Razvan','0768269121',0);
+insert into CLIENT values(cl_index.nextval,'Mircea','Andrei','0312765980',0);
+insert into CLIENT values(cl_index.nextval,'Popescu','Alexandru','0772541120',0);
+insert into CLIENT values(cl_index.nextval,'Bucurie','Bogdan','0796312585',0);
+insert into CLIENT values(cl_index.nextval,'Iuliu','Daniel','0787654312',0);
+insert into CLIENT values(cl_index.nextval,'Anghel','Rares','0798765432',0);
+insert into CLIENT values(cl_index.nextval,'Paun','Andrei','0712311111',0);
+insert into CLIENT values(cl_index.nextval,'Ghergu','Cezar','0387645674',0);
+insert into CLIENT values(cl_index.nextval,'Grigore','Vasile','0700122332',0);
+insert into client values (cl_index.nextval, 'Coroama','Cristian',NULL,0);
+insert into client values (cl_index.nextval, 'Tirila','Patric',NULL,0);
+insert into client values (cl_index.nextval, 'Gavrila','Alexandru',NULL,0);
+insert into client values (cl_index.nextval, 'Codarcea','Alexandru',NULL,0);
+--select * from CLIENT;
+
+insert into PRODUS values(12345678901,'consumabil',20.5 ,'miere de poliflora');
+insert into PRODUS values(12345678902,'consumabil',35.5 ,'miere de salcam');
+insert into PRODUS values(12345678903,'consumabil',25.5 ,'miere de rapita');
+insert into PRODUS values(63451424121,'biologic', 80,'matca');
+insert into PRODUS values(11234121341,'biologic',400 ,'roi');
+insert into PRODUS values(51231411123,NULL,20 ,'tinctura de propolis');
+insert into PRODUS values(99014141212,'consumabil',25,'laptisor de matca');
+insert into produs values(14252641314,'biologic','25','botca');
+insert into produs values('12345432112','consumbabil',50,'polen');
+
+
+--select * from PRODUS;
+
+insert into LOCATIE values(index_loc.nextval,'padure ciornuleasa');
+insert into LOCATIE values(index_loc.nextval,'mamaia');
+insert into LOCATIE values(index_loc.nextval,'camp');
+insert into LOCATIE values(index_loc.nextval,'acasa');
+insert into LOCATIE values(index_loc.nextval,'padure curcani');
+--select * from LOCATIE;
+
+insert into ANGAJAT values(index_ang.nextval,1,'Gica',NULL);
+insert into ANGAJAT values(index_ang.nextval,2,'Bora','Dragos');
+insert into ANGAJAT values(index_ang.nextval,3,'Coxescu','Marian');
+insert into ANGAJAT values(index_ang.nextval,4,'Georgel','Andrei');
+insert into ANGAJAT values(index_ang.nextval,5,'Hoara','Ionut');
+insert into ANGAJAT values(index_ang.nextval,4,'Ene','Cristi');
+insert into ANGAJAT values(index_ang.nextval,3,'Jac',NULL);
+insert into ANGAJAT values(index_ang.nextval,4,'Bobita',NULL);
+insert into ANGAJAT values(index_ang.nextval,1,'Cristi','Cristi');
+insert into ANGAJAT values(index_ang.nextval,4,'Ionut','Ionut');
+insert into angajat values (index_ang.nextval,4,'Mincu','Adrian');
+insert into angajat values (index_ang.nextval,4,'Dogarel','Andrei');
+insert into angajat values (index_ang.nextval,4,'Tirila','Patric');
+insert into angajat values (index_ang.nextval, 4,'Savu','Victor');
+insert into angajat values (index_ang.nextval, 4,'Apostol','Adrian');
+
+--select * from ANGAJAT;
+
+
+--loc1
+insert into FAMILIE_DE_ALBINE values('CL0001','verde',12);
+insert into FAMILIE_DE_ALBINE values('CL0012','rosu',13);
+insert into FAMILIE_DE_ALBINE values('CL0043','galben',22);
+insert into FAMILIE_DE_ALBINE values('CL0024','albastru',2);
+insert into FAMILIE_DE_ALBINE values('CL0110','alb',10);
+insert into FAMILIE_DE_ALBINE values('CL0021','verde',17);
+insert into FAMILIE_DE_ALBINE values('CL0031','albastru',56);
+insert into FAMILIE_DE_ALBINE values('CL0041','rosu',101);
+insert into FAMILIE_DE_ALBINE values('CL0054','alb',345);
+insert into FAMILIE_DE_ALBINE values('CL0087','rosu',19);
+--loc2
+insert into FAMILIE_DE_ALBINE values('CL0056','verde',1);
+insert into FAMILIE_DE_ALBINE values('CL0023','rosu',77);
+insert into FAMILIE_DE_ALBINE values('CL0112','alb',102);
+insert into FAMILIE_DE_ALBINE values('CL0101','alb',100);
+insert into FAMILIE_DE_ALBINE values('CL0201','albastru',71);
+--loc3
+insert into FAMILIE_DE_ALBINE values('CL0090','verde',321);
+insert into FAMILIE_DE_ALBINE values('CL0009','rosu',118);
+insert into FAMILIE_DE_ALBINE values('CL1111','alb',512);
+insert into FAMILIE_DE_ALBINE values('CL3101','alb',24);
+insert into FAMILIE_DE_ALBINE values('CL4201','albastru',171);
+insert into FAMILIE_DE_ALBINE values('CL5656','verde',906);
+insert into FAMILIE_DE_ALBINE values('CL1002','rosu',471);
+insert into FAMILIE_DE_ALBINE values('CL3172','alb',903);
+insert into FAMILIE_DE_ALBINE values('CL3501','alb',156);
+insert into FAMILIE_DE_ALBINE values('CL9109','albastru',781);
+insert into FAMILIE_DE_ALBINE values('CL7456','verde',822);
+insert into FAMILIE_DE_ALBINE values('CL1223','rosu',773);
+insert into FAMILIE_DE_ALBINE values('CL7410','alb',404);
+insert into FAMILIE_DE_ALBINE values('CL0381','alb',828);
+insert into FAMILIE_DE_ALBINE values('CL1411','albastru',971);
+insert into FAMILIE_DE_ALBINE values('CL8806','verde',991);
+insert into FAMILIE_DE_ALBINE values('CL7323','rosu',797);
+insert into FAMILIE_DE_ALBINE values('CL6312','alb',717);
+insert into FAMILIE_DE_ALBINE values('CL6221','alb',530);
+insert into FAMILIE_DE_ALBINE values('CL9301','albastru',978);
+--loc4
+insert into FAMILIE_DE_ALBINE values('CL9806','verde',900);
+insert into FAMILIE_DE_ALBINE values('CL8323','rosu',700);
+insert into FAMILIE_DE_ALBINE values('CL7312','alb',117);
+insert into FAMILIE_DE_ALBINE values('CL7221','alb',500);
+insert into FAMILIE_DE_ALBINE values('CL1301','albastru',970);
+insert into FAMILIE_DE_ALBINE values('CL9807','rosu',904);
+insert into FAMILIE_DE_ALBINE values('CL8324','rosu',710);
+insert into FAMILIE_DE_ALBINE values('CL7313','alb',515);
+insert into FAMILIE_DE_ALBINE values('CL7022','verde',487);
+insert into FAMILIE_DE_ALBINE values('CL5302','bej',877);
+--loc5
+insert into FAMILIE_DE_ALBINE values('CL8807','verde',999);
+insert into FAMILIE_DE_ALBINE values('CL9423','rosu',799);
+insert into FAMILIE_DE_ALBINE values('CL8412','alb',199);
+insert into FAMILIE_DE_ALBINE values('CL8321','alb',599);
+insert into FAMILIE_DE_ALBINE values('CL2401','albastru',222);
+insert into FAMILIE_DE_ALBINE values('CL8907','rosu',333);
+insert into FAMILIE_DE_ALBINE values('CL1824','rosu',444);
+insert into FAMILIE_DE_ALBINE values('CL7553','alb',151);
+insert into FAMILIE_DE_ALBINE values('CL7442','verde',666);
+insert into FAMILIE_DE_ALBINE values('CL5444','alb',777);
+
+--select * from FAMILIE_DE_ALBINE;
+
+
+insert into MATCA values('AA','CL0001','carpatina','a',NULL);
+insert into MATCA values('AB','CL0012','carpatina','a',NULL);
+insert into MATCA values('AC','CL0110','carpatina','g',NULL);
+insert into MATCA values('AD','CL0021','carpatina','g',NULL);
+insert into MATCA values('AR','CL0031','carpatina','v',NULL);
+insert into MATCA values('AT','CL0041','carpatina','r',NULL);
+insert into MATCA values('AY','CL0087','carpatina','r',NULL);
+insert into MATCA values('AU','CL0023','carpatina','s',NULL);
+insert into MATCA values('AI','CL0056','carpatina','a',NULL);
+insert into MATCA values('AO','CL0101','carpatina','g',NULL);
+insert into MATCA values('BT','CL0090','carpatina','r',NULL);
+insert into MATCA values('BY','CL0009','carpatina','s',NULL);
+insert into MATCA values('BU','CL3101','carpatina','s',NULL);
+insert into MATCA values('BI','CL5656','carpatina','a',NULL);
+insert into MATCA values('BR','CL9806','carpatina','v',NULL);
+insert into MATCA values('BE','CL5444','carpatina','a',NULL);
+insert into MATCA values('CY','CL1223','carpatina','r',NULL);
+insert into MATCA values('CU','CL0381','carpatina','v',NULL);
+insert into MATCA values('CI','CL8806','carpatina','a',NULL);
+insert into MATCA values('WO','CL7323','carpatina','g',NULL);
+insert into MATCA values('EE','CL7022','carpatina','v',NULL);
+insert into MATCA values('QW','CL9423','carpatina','a',NULL);
+--select * from MATCA
+
+
+insert into cumpara values(index_vanzare.nextval, 1,12345678901,2,to_date('23.01.2019','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 2,12345678901,1,to_date('14.11.2019','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 2,12345678903,4,to_date('20.01.2017','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 1,12345678902	,4,to_date('10.04.2020','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 3,12345678901,7,to_date('27.04.2016','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 1,99014141212,10,to_date('13.07.2018','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 10,12345678901,3,to_date('20.02.2022','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 5,63451424121,23,to_date('15.11.2023','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 3,11234121341,5,to_date('20.05.2020','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 4,14252641314,10,to_date('23.01.2019','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 9,12345678901,1,to_date('21.11.2009','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 8,63451424121,12,to_date('24.05.2018','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 7,12345678901,11,to_date('20.03.2020','dd.mm.yyyy'));
+insert into cumpara values(index_vanzare.nextval, 6,11234121341,2,to_date('03.01.2023','dd.mm.yyyy'));
+--select * from CUMPARA;
+
+insert into viziteaza values(index_vizita.nextval,141042,1,to_date('15.10.2020','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,104921,2,to_date('16.11.2019','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,947821,3,to_date('19.05.2022','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,947821,4,to_date('02.02.2020','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,194821,5,to_date('01.12.2009','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,104921,2,to_date('26.04.2010','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,104921,3,to_date('30.11.2019','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,104921,1,to_date('15.06.2022','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,141042,5,to_date('14.05.2018','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,947821,5,to_date('15.10.2019','dd.mm.yyyy'));
+
+insert into viziteaza values(index_vizita.nextval,141042,2,to_date('25.11.2021','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,104921,3,to_date('18.12.2020','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,947821,1,to_date('30.01.2023','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,947821,4,to_date('12.12.2022','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,194821,4,to_date('11.11.2019','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,104921,1,to_date('23.05.2011','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,104921,4,to_date('31.12.2020','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,104921,2,to_date('17.07.2023','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,141042,4,to_date('19.08.2020','dd.mm.yyyy'));
+insert into viziteaza values(index_vizita.nextval,947821,5,to_date('13.12.2023','dd.mm.yyyy'));
+--select * from VIZITEAZA;
+
+insert into angajeaza values (141042,100 ,to_date('04.07.2017','dd.mm.yyyy'),NULL,'paznic','1700');
+insert into angajeaza values (104921,101 ,to_date('12.03.2018','dd.mm.yyyy'),NULL,'paznic','1650');
+insert into angajeaza values (141042,102 ,to_date('14.04.2020','dd.mm.yyyy'),to_date('11.12.2009','dd.mm.yyyy'),'sofer','1400');
+insert into angajeaza values (141042,103 ,to_date('10.12.2009','dd.mm.yyyy'),to_date('11.12.2009','dd.mm.yyyy'),'asistent','1800');
+insert into angajeaza values (104921,104 ,to_date('10.12.2009','dd.mm.yyyy'),NULL,'paznic','1700');
+insert into angajeaza values (104921,105 ,to_date('15.05.2010','dd.mm.yyyy'),NULL,'contabil','2500');
+insert into angajeaza values (194821,106 ,to_date('14.01.2019','dd.mm.yyyy'),NULL,'paznic','1800');
+insert into angajeaza values (104921,107 ,to_date('10.12.2009','dd.mm.yyyy'),NULL,'paznic','1700');
+insert into angajeaza values (194821,108 ,to_date('24.09.2011','dd.mm.yyyy'),NULL,'asistent','1800');
+insert into angajeaza values (104921,109 ,to_date('07.04.2020','dd.mm.yyyy'),NULL,'ambalator','1700');
+insert into angajeaza values (104921,102 ,to_date('24.05.2022','dd.mm.yyyy'),NULL,'paznic','1500');
+insert into angajeaza values (104921,103 ,to_date('10.12.2019','dd.mm.yyyy'),NULL,'paznic','1750');
+insert into angajeaza values (104921,112 ,to_date('01.03.2023','dd.mm.yyyy'),NULL,'paznic','1500');
+insert into angajeaza values (104921,111 ,to_date('02.04.2020','dd.mm.yyyy'),NULL,'paznic','1500');
+insert into angajeaza values (104921,110 ,to_date('24.05.2023','dd.mm.yyyy'),NULL,'paznic','1500');
+insert into angajeaza values (141042,113 ,to_date('04.04.2023','dd.mm.yyyy'),NULL,'paznic','1500');
+insert into angajeaza values (141042,114 ,to_date('29.12.2019','dd.mm.yyyy'),NULL,'paznic','1500');
+
+
+--select * from ANGAJEAZA;
+
+insert into produce values(index_recoltare.nextval,'CL8807',12345678901,10);
+insert into produce values(index_recoltare.nextval,'CL9423',12345678902,35);
+insert into produce values(index_recoltare.nextval,'CL8412',12345678903,20);
+insert into produce values(index_recoltare.nextval,'CL8321',99014141212,10);
+insert into produce values(index_recoltare.nextval,'CL2401',12345432112,1);
+insert into produce values(index_recoltare.nextval,'CL8907',12345678901,10);
+insert into produce values(index_recoltare.nextval,'CL1824',12345678901,14);
+insert into produce values(index_recoltare.nextval,'CL0054',12345678901,26);
+insert into produce values(index_recoltare.nextval,'CL0056',12345678901,21);
+insert into produce values(index_recoltare.nextval,'CL0101',12345678901,20);
+insert into produce values(index_recoltare.nextval,'CL0201',12345678902,23);
+insert into produce values(index_recoltare.nextval,'CL3101',12345678901,13);
+insert into produce values(index_recoltare.nextval,'CL4201',12345678901,24);
+insert into produce values(index_recoltare.nextval,'CL5656',12345678902,17);
+insert into produce values(index_recoltare.nextval,'CL9109',12345678901,35);
+insert into produce values(index_recoltare.nextval,'CL1301',12345678902,25);
+insert into produce values(index_recoltare.nextval,'CL7312',63451424121,1);
+
+insert into produce values(index_recoltare.nextval,'CL8807',11234121341,19);
+insert into produce values(index_recoltare.nextval,'CL9423',11234121341,31);
+insert into produce values(index_recoltare.nextval,'CL8412',12345678903,28);
+insert into produce values(index_recoltare.nextval,'CL8321',11234121341,11);
+insert into produce values(index_recoltare.nextval,'CL2401',12345432112,10);
+insert into produce values(index_recoltare.nextval,'CL8907',99014141212,11);
+insert into produce values(index_recoltare.nextval,'CL1824',12345678901,16);
+insert into produce values(index_recoltare.nextval,'CL0054',12345678901,46);
+insert into produce values(index_recoltare.nextval,'CL0056',11234121341,1);
+insert into produce values(index_recoltare.nextval,'CL0101',12345678901,21);
+insert into produce values(index_recoltare.nextval,'CL0201',12345678902,13);
+insert into produce values(index_recoltare.nextval,'CL3101',63451424121,43);
+insert into produce values(index_recoltare.nextval,'CL4201',99014141212,20);
+
+--select * from PRODUCE;
+
+
+insert into verifica values(index_verificare.nextval,'CL8907',104921,1,4,2,2,to_date('10.09.2023','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL4201',141042,1,3,3,5,to_date('08.07.2022','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL3172',190391,2,1,4,5,to_date('02.09.2019','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL1411',190391,2,5,5,5,to_date('03.04.2009','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL7312',194821,3,4,4,3,to_date('04.07.2010','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL1301',947821,4,2,3,4,to_date('02.06.2012','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL7221',947821,3,1,4,5,to_date('11.09.2014','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL7312',104921,3,4,4,5,to_date('12.07.2014','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL0001',104921,5,4,4,2,to_date('14.05.2016','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL8412',141042,5,1,2,3,to_date('16.04.2015','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL7221',141042,1,4,1,1,to_date('17.06.2020','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL7312',947821,4,2,3,3,to_date('10.03.2021','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL0001',141042,4,4,4,2,to_date('11.07.2022','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL8412',141042,4,5,5,5,to_date('26.08.2023','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL3172',194821,2,3,2,4,to_date('30.06.2023','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL1411',190391,4,2,3,4,to_date('10.04.2018','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL7312',194821,4,2,3,3,to_date('18.06.2017','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL1301',104921,4,1,2,2,to_date('25.07.2014','dd.mm.yyyy'));
+insert into verifica values(index_verificare.nextval,'CL7221',947821,2,5,2,5,to_date('27.08.2013','dd.mm.yyyy'));
+--select * from VERIFICA;

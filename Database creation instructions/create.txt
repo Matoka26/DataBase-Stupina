@@ -1,0 +1,94 @@
+create table APICULTOR(
+    id_apicultor number(6) PRIMARY KEY,
+    nume_apicultor varchar2(20) NOT NULL, 
+    prenume_apicultor varchar2(20) NOT NULL,
+    data_inregistrare date NOT NULL
+);
+
+create table CLIENT(
+    id_client number(6) PRIMARY KEY,
+    nume_client varchar2(20) NOT NULL,
+    prenume_client varchar2(20),
+    nr_telefon varchar2(10) UNIQUE ,
+    multiplicator number(1)
+);
+
+create table PRODUS(
+cod_produs number(13) PRIMARY KEY,
+    categorie varchar2(20),
+    pret number(5,2),
+    nume_produs varchar2(30) UNIQUE
+);
+
+create table LOCATIE(
+    cod_locatie number(2) PRIMARY KEY,
+    nume_loc varchar2(20) UNIQUE
+);
+
+
+
+create table ANGAJAT(
+	id_angajat number(3) PRIMARY KEY,
+    cod_locatie number(2) NOT NULL,
+    nume_angajat varchar2(20),
+	prenume_angajat varchar2(20)
+);
+
+
+
+create table FAMILIE_DE_ALBINE(
+    id_stup varchar2(8) PRIMARY KEY,
+    culoare varchar2(15),
+    numar number(3)
+);
+
+
+create table MATCA(
+	id_matca varchar2(3) PRIMARY KEY,
+    id_stup varchar2(6),
+    rasa varchar2(20) CHECK( rasa = 'carpatina'),
+    culoare_marcaj varchar2(1) CHECK(culoare_marcaj = 'a' or culoare_marcaj = 's' or culoare_marcaj = 'r' or culoare_marcaj = 'g' or culoare_marcaj = 'v'),
+    data_inlocuire date
+);
+
+
+create table CUMPARA(
+    cod_vanzare number(8) PRIMARY KEY,
+    id_client number(6),
+    cod_produs number(13),
+    cantitate number(4),
+    data_vanzare date
+);
+create table VIZITEAZA(
+    id_vizita number(6) PRIMARY KEY,
+	id_apicultor number(6),
+    cod_locatie number(2),
+    data_vizita date
+);
+
+create table ANGAJEAZA(
+    id_apicultor number(6),
+    id_angajat number(3),
+    data_angajare date,
+    data_eliminare date,
+    post varchar2(20),
+    salariu number(5) CHECK (salariu >1000)
+);
+
+create table PRODUCE(
+    id_recoltare number(7) PRIMARY KEY,
+    id_stup varchar2(6),
+    cod_produs number(13),
+    cantitate number(4) CHECK(cantitate > 0)
+);
+create table VERIFICA(
+    id_verificare number(7) PRIMARY KEY,
+    id_stup varchar2(6),
+    id_apicultor number(6),
+    cod_locatie number(2),
+    productie_miere number(1) CHECK(productie_miere > 0 and productie_miere < 6 ),
+    instinct_roire number(1) CHECK(instinct_roire > 0 and instinct_roire < 6),
+    blandete number(1) CHECK(blandete > 0 and blandete < 6),
+    data_verificare date
+);
+
