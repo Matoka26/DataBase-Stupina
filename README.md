@@ -6,6 +6,9 @@ The project goal is to model a real life beekeeping farm considering all the fac
 - Other associate beekeepers  
 - Multiple locations of the farm  
 - Every individual hive and each queen
+  
+![image](https://github.com/Matoka26/DataBase-Stupina/assets/106425405/be4aa954-1f8b-4fc2-93d7-a85bc7a705d2)  
+
 
 At the end is [a little example](Year2%20Database%20Management%20Systems/Exercises/EX12.sql) of user privileges management using a trigger
 
